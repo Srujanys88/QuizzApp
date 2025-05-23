@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../static/resources/CSS/login-signup.css" />
+    <title>Admin-login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Gmail" id="gmail" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" id="psw" />
+            </div>
+
+            <input type="button" value="Login" class="btn solid" id="login" />
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>CREATE AND CONDUCT QUIZ</h3>
+          </div>
+          <img
+            src="../static/resources/images/login-signup-images/signup.svg"
+            class="image"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#login").click(function () {
+          var gmail = $("#gmail").val();
+          var psw = $("#psw").val();
+          $.ajax({
+            url: "http://127.0.0.1:5000/admin",
+            type: "POST",
+            data: { gmail: gmail, psw: psw },
+            success: function (data) {
+              if (data == "success") {
+                window.location.href = "http://127.0.0.1:5000/nav";
+              } else {
+                alert("Invalid Username or Password");
+              }
+            },
+          });
+        });
+      });
+    </script>
+
+    <script src="../static/resources/JS/login-signup.js"></script>
+  </body>
+</html>

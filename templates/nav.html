@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #5995fd;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+<body>
+
+<h2>Quiz</h2>
+
+
+<div class="navbar">
+  <a class="active" href="#d0" onclick="d0()" ><i class="fa fa-fw fa-home"></i>Quiz</a> 
+  <a href="#d1" onclick="d1()"><i class="fa fa-fw fa-search"></i>Questions</a> 
+  <a href="#d2" onclick="d2()"><i class="fa fa-fw fa-envelope"></i>Score Board</a> 
+  <a href="" id="d33" onclick=""><i class="fa fa-fw fa-user"></i> Logout</a>
+</div>
+<div id="d0" style="">
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  .registerbtn {
+    background-color: #5995fd;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  
+  /* Add a blue text color to links */
+  a {
+    color: dodgerblue;
+  }
+  
+  /* Set a grey background color and center the text of the "sign in" section */
+  .signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+  </style>
+  <style>
+    /* Style the table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px black solid;
+      border-spacing: 0;
+      text-align: center;
+    }
+    
+    /* Style the table header */
+    th {
+      background-color: #f2f2f2;
+      padding: 8px;
+      text-align: left;
+      text-align: center;
+    }
+    
+    /* Style the table cells */
+    td {
+      border: 1px solid #000000;
+      padding: 0px;
+    }
+    
+    /* Style alternate rows */
+    
+    /* Hover effect */
+    tr:hover {
+      background-color: #ddd;
+    }
+    .quiz-title{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .h11{
+      font-size: 25px;
+    }
+    .registerbtn.registerbtn11{
+      border-radius: 8px;
+    }
+  </style>
+
+
+  </head>
+  <body>
+    <div ng-app="depRApp" ng-controller="depRCtrl">
+  <form action="/action_page.php">
+    <div class="container">
+      <h1 class="h11">Quiz Title</h1>
+      <hr>
+      <div class="quiz-title">
+        <div>
+          <label for="qname"><b>Enter Quiz Name</b></label>
+          <input type="text" placeholder="Enter Quiz Name" name="qzname" id="qzname" required>
+        </div>
+        <div>
+          <button type="button" class="registerbtn registerbtn11" id="qzregisterbtn">Create Quiz</button>
+        </div>
+      </div>
+      <div name="qzshow" id="qzshow" ></div>
+    </div>
+  </form>
+  </div>
+  
+  </body>
+  </html>
+</div>
+<div id="d1" style="display: none;"> 
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    text-align: center;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  .registerbtn {
+    background-color: #5995fd;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  
+  /* Add a blue text color to links */
+  a {
+    color: dodgerblue;
+  }
+  
+  /* Set a grey background color and center the text of the "sign in" section */
+  .signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+  .correct_answer{
+    font-weight:  bold;
+    margin-top: 0px;
+  }
+  .qtitle{
+    margin-top: 0px;
+  }
+  .answer_quiz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    /* margin-bottom: 60px; */
+    /* margin-top: 10px; */
+  }
+
+  .registerbtn.insertbtn{
+    width: 150px;
+    border-radius: 6px;
+  }
+  .options{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .optionss > * {
+    margin-right: 5px; /* Adjust as needed */
+  }
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    width: 200px; /* Adjust width as needed */
+}
+
+/* Style the options */
+select option {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Style the selected option */
+select option:checked {
+    background-color: #007bff;
+    color: #fff;
+}
+
+  </style>
+  </head>
+  <body>
+    
+  <form action="/action_page.php">
+    <div class="container">
+      <h1>Questions</h1>
+      <hr>
+      <label for="rtname"><b>Question Title</b></label>
+      <input type="text" placeholder="Enter Question Title" name="qtitle" id="qtitle" required>
+      <div class="optionss">
+        <div>
+          <label for="rtdes"><b>Option A</b></label>
+          <input type="text" placeholder="Enter Option A" class="optionabcd" name="oa" id="oa"  required>
+  
+          <label for="rtdes"><b>Option B</b></label>
+          <input type="text" placeholder="Enter Option B" class="optionabcd" name="ob" id="ob"  required>
+        </div>
+        
+        <div>
+          <label for="rtdes"><b>Option C</b></label>
+          <input type="text" placeholder="Enter Option C" class="optionabcd" name="oc" id="oc"  required>
+          
+          <label for="rtdes"><b>Option D</b></label>
+          <input type="text" placeholder="Enter Option D" class="optionabcd" name="od" id="od"  required>
+        </div>
+      </div>
+
+      <div class="answer_quiz">
+        <div class="correct_answer">
+          <label for="correct_answer" >Correct Answer:</label><select id="cans">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select><br>
+        </div>
+       
+        <div class="qtitle">
+          <label for="" ><strong>Quiz Title:</strong></label> <select id="qntitle"></select><br>
+        </div>
+
+        <center><button type="button" class="registerbtn insertbtn" id="qnregisterbtn">Insert</button></center>
+      </div>
+      
+      <div name="qnshow" id="qnshow"></div>
+    </div>
+    
+    
+  </form>
+  </div>
+  </body>
+  </html>
+  
+</div>
+
+<div id="d2" style="display: none;">
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Questions</title>
+    <style>
+      h1.h11{
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      form.form11 {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      input[type="text"].quiz_idd{
+        width: calc(100% - 120px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      button[type="submit"].submitt{
+        width: 100px;
+        padding: 10px;
+        background-color: #5995fd;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button[type="submit"].submitt:hover {
+        background-color: #398ae0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1 class="h11">Enter Quiz ID:</h1>
+    <form class="form11" action="/scorebord" method="POST">
+      <input class="quiz_idd" type="text" name="quiz_id" placeholder="Enter Quiz ID" />
+      <button class="submitt" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
+</div>
+
+
+<div id="d3" style="display: none;">
+    Login..
+</div>
+</body>
+<script type="text/javascript">
+    function  d0() {
+        document.getElementById("d0").style.display = "block";
+        document.getElementById("d1").style.display = "none";
+        document.getElementById("d2").style.display = "none";
+        document.getElementById("d3").style.display = "none";
+    }   
+    function  d1() {
+        document.getElementById("d0").style.display = "none";
+        document.getElementById("d1").style.display = "block";
+        document.getElementById("d2").style.display = "none";
+        document.getElementById("d3").style.display = "none";
+    }
+    function d2(){
+        document.getElementById("d0").style.display = "none";
+        document.getElementById("d1").style.display = "none";
+        document.getElementById("d2").style.display = "block";
+        document.getElementById("d3").style.display = "none";
+    }
+    function d3(){
+        document.getElementById("d0").style.display = "none";
+        document.getElementById("d1").style.display = "none";
+        document.getElementById("d2").style.display = "none";
+        document.getElementById("d3").style.display = "block";      
+    }
+</script>
+<script>
+
+  $(document).ready(function() {
+    loadquizzes();
+    loadquiznames();
+    loadquestions();
+    function loadquiznames(){
+
+      $.ajax({
+        url: 'http://127.0.0.1:5000/getquiznames',
+        type: 'POST',
+        success: function(data){
+          $('#qntitle').html(data);
+        }
+      });
+    }
+    
+    function loadquizzes(){
+
+       $.ajax({
+        url: 'http://127.0.0.1:5000/qzshow',
+        type: 'POST',
+        success: function(data){
+          $('#qzshow').html(data);
+        }
+      });
+    }
+
+    function loadrtypes(){
+       $.ajax({
+        url: 'http://127.0.0.1:5000/rtshow',
+        type: 'POST',
+        success: function(data){
+          //alert(data);
+          $('#rtshow').html(data);
+        }
+      });
+    }
+
+    function loadquestions(){
+       $.ajax({
+        url: 'http://127.0.0.1:5000/qnshow',
+        type: 'POST',
+        success: function(data){
+          //alert(data);
+          $('#qnshow').html(data);
+        }
+       });
+    }
+
+    function loadresourcetypenames(){
+       $.ajax({
+        url: 'http://127.0.0.1:5000/rtnameshow',
+        type: 'POST',
+        success: function(data){
+          //alert(data);
+          $('#rrtid').html(data);
+        }
+       });
+    }
+ 
+    $(document).ready(function () {
+        $("#qzregisterbtn").click(function () {
+          var qname = $('#qzname').val();
+          $.ajax({
+            url: "http://127.0.0.1:5000/qzinsert",
+            type: "POST",
+            data: { qname: qname },
+            success: function (data) {
+              alert(data);
+              loadquizzes();
+            },
+          });
+        });
+      });
+
+
+
+    $("#qnregisterbtn").click(function(){
+    var qtitle= $('#qtitle').val();
+    var oa = $('#oa').val();
+    var ob = $('#ob').val();
+    var oc = $('#oc').val();
+    var od= $('#od').val();
+    var cans = $('#cans').val(); // Get the selected correct option
+    var qntitle = $('#qntitle').val();
+
+    $.ajax({
+        url: 'http://127.0.0.1:5000/questioninsert',
+        type: 'POST',
+        data: {qtitle:qtitle, oa:oa, ob:ob, oc:oc,od:od,cans:cans,qntitle:qntitle},
+        success: function(data){
+            alert(data);
+            loadquestions();
+        }
+      });
+    });
+
+
+
+    $("#rtregisterbtn").click(function(){
+      var rtname = $('#rtname').val();
+      var rtdes = $('#rtdes').val();
+       $.ajax({
+        url: 'http://127.0.0.1:5000/rtinsert',
+        type: 'POST',
+        data: {rtname: rtname, rtdes: rtdes},
+        success: function(data){
+          alert(data);
+          loadrtypes();
+        }
+      });
+    });
+  
+   $("#rregisterbtn").click(function(){
+    var rname = $('#rname').val();
+    var rdes = $('#rdes').val();
+    var rrtid = $('#rrtid').val();
+    var ravalue = $('#ravalue').val();
+    var rstatus = $('#rstatus').val();
+    var files = $('#rfile')[0].files[0]; 
+    var fd=new FormData();
+    fd.append('rname',rname);
+    fd.append('rdes',rdes);
+    fd.append('rrtid',rrtid);
+    fd.append('ravalue',ravalue);
+    fd.append('rstatus',rstatus);
+    fd.append('rfile',files);
+    //alert(files);
+     $.ajax({
+        url: 'http://127.0.0.1:5000/rinsert',
+        type: 'POST',
+        data: fd,
+        processData: false,
+        contentType: false,
+        success: function(data){
+          alert(data);
+          loadresources();
+        }
+      });
+    });
+  });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#d33").click(function () {
+          var buttonId = $(this).attr("id");
+          $.ajax({
+            type: "POST",
+            url: "/user-login",
+            data: { id: buttonId },
+            success: function (response) {
+              window.location.href = "/user-login";
+            },
+            error: function (error) {
+              console.log(error);
+            },
+          });
+        });
+      });
+    </script>
+</html> 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: hsla(0, 0%, 100%, 0.274);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .login-container {
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        width: 80%;
+        max-width: 400px;
+      }
+
+      .login-heading {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .login-section {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+      }
+
+      .login-section:hover {
+        background-color: #e4e4e4d1;
+      }
+
+      .login-section i {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+
+      .admin-login {
+        color: #3498db;
+      }
+
+      .student-login {
+        color: #2ecc71;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .login-container {
+          width: 90%;
+          margin: 0 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-heading">LOGIN <i class="fas fa-sign-in-alt"></i></div>
+      <a href="admin.html">
+        <div class="login-section admin-login">
+          <i class="fas fa-user-shield"></i>
+          <p><strong>ADMIN LOGIN</strong></p>
+        </div>
+      </a>
+
+      <a href="student.html">
+        <div class="login-section student-login">
+          <i class="fas fa-user-graduate"></i>
+          <p><strong>STUDENT LOGIN</strong></p>
+        </div>
+      </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/19faedb160.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <meta
+      name="google-site-verification"
+      content="Ccnc3F_xnpOgwpRzmF4Y92iEyawMW6xj6z5-LB7RxG8"
+    />
+    <link rel="stylesheet" href="dep.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --gmail-blue: #1a73e8;
+        --gmail-font: "Open Sans", "Roboto", Arial, sans-serif;
+      }
+
+      html {
+        font-size: 10px;
+      }
+
+      body {
+        font-size: 1.6rem;
+        width: 100%;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /*NAVBAR*/
+
+      nav {
+        position: fixed;
+        top: 0;
+        z-index: 9999;
+        background-color: #fff;
+        padding: 1.6rem 2rem;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      }
+
+      .nav-logo img {
+        width: 30px;
+      }
+
+      .nav-logo span {
+        font-family: sans-serif;
+        font-size: 22px;
+        color: #5f6368;
+        font-weight: 300;
+      }
+
+      .nav-items ul li {
+        margin-left: 0rem;
+      }
+
+      .nav-items ul li a,
+      .sfv-button {
+        border: 0.5px solid rgba(0, 0, 0, 0.07);
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.1px;
+        line-height: 24px;
+        transition: 0.3s all;
+      }
+
+      .nav-items ul li:nth-child(1) a:hover,
+      .sc-six-button-ft:hover,
+      .section-first ul li:nth-child(2) a:hover {
+        background-color: rgba(66, 133, 244, 0.05);
+      }
+
+      .nav-items ul li:nth-child(2) a:hover,
+      .sfv-button:hover {
+        background-color: rgba(32, 116, 252, 0.825);
+        border-color: rgba(58, 129, 243, 0.4);
+      }
+
+      .nav-items ul li:nth-child(3) a:hover,
+      .section-first ul li:nth-child(1) a:hover,
+      .sc-six-button-f:hover {
+        background-color: #174ea6;
+      }
+
+      .button-google {
+        padding: 1rem 1rem;
+        border-radius: 5px;
+      }
+
+      .clr-blue {
+        color: var(--gmail-blue);
+      }
+
+      .bg-blue {
+        background-color: var(--gmail-blue);
+      }
+
+      /*FİRST SECTİON*/
+
+      .section {
+        padding: 6rem 0;
+      }
+
+      .section-first .col-xl-7 img {
+        width: 100%;
+      }
+
+      .section-first .col-xl-5 {
+        padding: 2rem;
+        margin-bottom: 5rem;
+      }
+
+      .section-first h1 {
+        font-size: 34px;
+        line-height: 36px;
+        color: #202124;
+        font-family: "Google Sans", "Roboto", Arial, sans-serif;
+        font-weight: 500;
+      }
+
+      .section-first p {
+        color: #5f6368;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 300;
+        margin-bottom: 4rem;
+      }
+
+      .section-first a {
+        transition: 0.3s all;
+        margin-right: 1rem;
+      }
+
+      /*SECTION2*/
+
+      .mobil-image {
+        display: none;
+      }
+
+      #liHeader1 .mobil-image,
+      #liHeader1-t .mobil-image {
+        display: inline-block;
+      }
+
+      .section-second {
+        padding-top: 0;
+      }
+
+      .section-second-hbig {
+        font-size: 28px;
+        line-height: 32px;
+        color: #202124;
+
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .progressArea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #progress1,
+      #progress1-t {
+        background-color: var(--gmail-blue);
+      }
+
+      .progress {
+        width: 5px;
+        margin-right: 40px;
+        height: 100%;
+        position: relative;
+        background-color: #f1f3f4;
+        border-radius: 0;
+      }
+
+      .progresInner {
+        content: "\A";
+        position: absolute;
+        background: var(--gmail-blue);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        transition: 1s all;
+        border-radius: 0;
+      }
+
+      .liHeader {
+        font-size: 18px;
+        line-height: 26px;
+        font-family: sans-serif;
+        color: #5f6368;
+        transition: 0.5s all;
+        margin-bottom: 10px !important;
+      }
+
+      .liText {
+        color: #5f6368;
+        font-family: sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+      }
+
+      .section-second-li {
+        margin-top: 3rem;
+        cursor: pointer;
+      }
+
+      .liImages ul li {
+        display: none;
+      }
+
+      .active {
+        display: inline-flex !important;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .active-li {
+        color: var(--gmail-blue);
+      }
+
+      /* SECTION THİRD*/
+      .pr-thirded {
+        padding-right: 2rem;
+      }
+
+      #section-third,
+      #section-five {
+        background-color: #f8f9fa;
+      }
+
+      .st-ctr {
+        padding: 6rem 1rem;
+      }
+
+      .st-item {
+        max-width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        flex-direction: column;
+        margin: 2rem;
+      }
+
+      .pleft {
+        padding: 0;
+      }
+
+      .st-item svg {
+        width: 30px;
+        margin-bottom: 5px;
+      }
+
+      .st-item-header {
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .st-item-text {
+        font-family: var(--gmail-font);
+        font-size: 14px;
+        font-weight: 300;
+        color: #5f6368;
+      }
+
+      /*SECTION FOUR*/
+
+      .sf-img {
+        margin-bottom: 30px;
+      }
+
+      .sf-header,
+      .sfv-header,
+      .sc-six-header {
+        font-size: 28px;
+        line-height: 32px;
+      }
+
+      .sf-subtitle {
+        margin-top: 16px;
+        font-size: 18px;
+        color: #5f6368;
+        font-weight: 300;
+      }
+
+      .sf-text {
+        margin-top: 30px;
+        color: #5f6368;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 25px;
+        margin-bottom: 30px;
+      }
+
+      .sf-button {
+        border: 0.5px solid rgba(0, 0, 0, 0.07);
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.1px;
+        line-height: 24px;
+        transition: 0.3s all;
+        background-color: #fff;
+        color: var(--gmail-blue);
+      }
+
+      .sf-button:hover {
+        background-color: rgba(66, 133, 244, 0.05);
+      }
+
+      /*SECTION FİVE*/
+
+      .sfv-ctr-inner-first {
+        margin-bottom: 0px;
+      }
+
+      .sfv-ctr {
+        padding: 4rem 1rem;
+      }
+
+      .sfv-header,
+      .sc-six-header {
+        margin-bottom: 20px;
+      }
+
+      .nmh-box {
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        border-radius: 5px;
+        background-color: #fff;
+        width: auto;
+      }
+
+      .sfv-button {
+        display: inline-block;
+      }
+
+      .nmh-title {
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      .nmh-text {
+        font-size: 16px;
+        font-weight: 300;
+        color: #5f6368;
+      }
+
+      .accordion-item-title {
+        cursor: pointer;
+        position: relative;
+        padding-right: 100px;
+      }
+
+      .accordion-item-title h3,
+      .sc-six-text {
+        font-weight: 300;
+        font-size: 19px;
+        line-height: 26px;
+      }
+
+      .accr-arrow {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        color: var(--gmail-blue);
+        font-size: 22px;
+      }
+
+      .accordion-item-ggl {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+        padding: 23px 0;
+        font-size: 18px;
+        line-height: 28px;
+        color: #202124;
+      }
+
+      .accordion-item-inner {
+        display: none;
+        font-size: 14px;
+        font-weight: 300;
+        color: #5f6368;
+        line-height: 24px;
+        padding-top: 25px;
+        padding-bottom: 20px;
+      }
+
+      .accordion-item-ggl:nth-child(1) .accordion-item-inner {
+        display: inline-block;
+      }
+
+      /*SECTİON SİX*/
+
+      .sc-six-header {
+        width: 250px;
+        text-align: center;
+      }
+
+      .sc-six-text {
+        color: #5f6368;
+      }
+
+      .sc-six-button-f {
+        background-color: var(--gmail-blue);
+        color: #fff;
+        transition: 0.3s all;
+      }
+
+      .sc-six-button-f:hover {
+        color: #fff;
+        background-color: #174ea6;
+      }
+
+      .footer-img img {
+        object-fit: contain;
+        object-position: center;
+      }
+      /*FOOTER*/
+      footer {
+        padding: 30px;
+        background-color: #f8f9fa;
+      }
+      .google-logo {
+        margin-right: 0;
+      }
+
+      .footer-ul {
+        margin-top: 20px;
+      }
+
+      .footer-ul li {
+        margin-right: 25px;
+      }
+      .footer-ul li a,
+      .help-btn a {
+        color: #5f6368;
+      }
+
+      .footer-select {
+        width: 60%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #5f6368;
+        font-size: 15px;
+      }
+
+      .footer-scd-col {
+        margin-top: 20px;
+      }
+      .linkedin img {
+        height: 20px;
+        width: 20px;
+      }
+      .linkedin a {
+        text-decoration: none;
+        font-size: 18px;
+        margin: 6px;
+        color: #1a73e8;
+        margin-bottom: 20px;
+        transition: ease 0.5s;
+      }
+      .linkedin :hover {
+        color: #0146ad;
+        text-decoration: underline;
+      }
+      .linkedin {
+        margin-bottom: 4px;
+      }
+
+      .quiz-main {
+        height: auto;
+        width: auto;
+      }
+      .liImages ul li img {
+        width: 100%;
+      }
+      .liImages.liImages1 ul li img {
+        width: 500px;
+        height: 550px;
+        border-radius: 20px;
+        border: 3px solid #1a73e8;
+      }
+      @media (min-width: 576px) {
+        .footer-select {
+          width: 300px;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          color: #5f6368;
+          font-size: 15px;
+        }
+
+        .footer-img {
+          height: 250px;
+        }
+        .footer-img img {
+          object-fit: cover;
+        }
+        .button-google {
+          padding: 1.5rem 2.7rem;
+          border-radius: 5px;
+        }
+        .button-google :hover {
+          color: red;
+        }
+
+        .nmh-box {
+          width: 100%;
+        }
+
+        .sfv-ctr {
+          padding: 6rem 1rem;
+          width: 500px;
+        }
+
+        .st-item {
+          max-width: 300px;
+          display: flex;
+          justify-content: center;
+          align-items: baseline;
+          flex-direction: column;
+          margin: 2rem;
+        }
+
+        .section-first .col-xl-7 img,
+        .thirded,
+        .ss-ctr,
+        .section-second-hbig,
+        .st-ctr {
+          width: 500px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        footer {
+          padding: 30px 100px;
+          background-color: #f8f9fa;
+        }
+
+        .quiz-main {
+          margin-left: 0px;
+        }
+        .footer-img {
+          height: 300px;
+        }
+        .footer-img img {
+          object-fit: cover;
+        }
+
+        .sc-six-text {
+          font-size: 28px;
+          line-height: 38px;
+          letter-spacing: 0.0247517px;
+          color: #5f6368;
+          margin-bottom: 25px;
+        }
+        .sc-six-header {
+          width: 300px;
+          text-align: center;
+        }
+
+        .st-item-text {
+          font-family: var(--gmail-font);
+          font-size: 18.5px;
+          font-weight: 300;
+          color: #5f6368;
+        }
+
+        .st-item-header {
+          font-size: 23px;
+          font-weight: 500;
+          margin-bottom: 20px;
+        }
+
+        .st-item svg {
+          width: auto;
+          margin-bottom: 15px;
+        }
+
+        .liText {
+          color: #5f6368;
+          font-family: sans-serif;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 24px;
+        }
+
+        .liHeader {
+          font-size: 22px;
+          line-height: 28px;
+          font-family: sans-serif;
+          color: #5f6368;
+          transition: 0.5s all;
+          margin-bottom: 20px !important;
+        }
+
+        .section-second-hbig {
+          color: #202124;
+          font-size: 40px;
+          width: 100%;
+          margin-bottom: 100px;
+        }
+
+        .section-second {
+          padding-top: 6rem;
+        }
+
+        .section-first .col-xl-7 img {
+          width: 500px;
+        }
+
+        .nav-items ul li {
+          margin-left: 1rem;
+        }
+
+        .nmh-title {
+          font-size: 23px;
+          line-height: 28px;
+        }
+
+        .nmh-text {
+          font-size: 19px;
+          font-weight: 300;
+          color: #5f6368;
+        }
+
+        .accordion-item-inner {
+          display: none;
+          font-size: 16px;
+          font-weight: 300;
+          color: #5f6368;
+          line-height: 24px;
+          padding-top: 25px;
+          padding-bottom: 40px;
+          padding-right: 100px;
+        }
+
+        .sfv-ctr {
+          padding: 6rem 1rem;
+          width: 700px;
+        }
+
+        .st-ctr {
+          padding: 9rem 1rem;
+        }
+
+        .sf-header,
+        .sfv-header,
+        .sc-six-header {
+          font-size: 42px;
+          line-height: 52px;
+        }
+
+        .sf-subtitle {
+          width: 630px;
+          margin-top: 16px;
+          font-size: 28px;
+        }
+
+        .sf-text {
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 25px;
+          width: 600px;
+          margin-bottom: 30px;
+        }
+
+        .sf-button {
+          border: 0.5px solid rgba(0, 0, 0, 0.07);
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 0.1px;
+          line-height: 24px;
+          transition: 0.3s all;
+          background-color: #fff;
+          color: var(--gmail-blue);
+        }
+
+        .st-ctr {
+          width: auto;
+        }
+
+        #sf-ctr {
+          width: 700px;
+        }
+
+        .st-item {
+          max-width: 300px;
+          display: flex;
+          justify-content: center;
+          align-items: baseline;
+          flex-direction: column;
+          margin: 2rem;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .footer-scd-col {
+          margin-top: 0;
+        }
+        .quiz-main {
+          margin-left: 0px;
+        }
+        .footer-ul {
+          margin-top: 0;
+        }
+
+        .footer-select {
+          width: 75%;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          color: #5f6368;
+          font-size: 15px;
+        }
+
+        .sfv-ctr-inner-first {
+          margin-bottom: 100px;
+        }
+
+        .sfv-header {
+          margin-bottom: 60px;
+        }
+
+        .nmh-box {
+          border: 1px solid rgba(0, 0, 0, 0.16);
+          border-radius: 5px;
+          background-color: #fff;
+          width: auto;
+        }
+
+        .sfv-ctr-inner-first {
+          margin-bottom: 0;
+        }
+
+        .google-faq {
+          padding-left: 60px;
+        }
+
+        .sfv-ctr {
+          padding: 8rem 5rem;
+          width: 100%;
+        }
+
+        #sf-ctr {
+          width: 900px;
+        }
+
+        .section-first p {
+          font-size: 18px;
+        }
+
+        .section-first h1 {
+          font-size: 64px;
+          line-height: 70px;
+        }
+
+        nav {
+          padding: 1.6rem 7.5rem;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+            0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .section-first .col-xl-5,
+        .pleft {
+          padding-left: 13rem;
+          padding-right: 3rem;
+        }
+
+        .thirded,
+        .ss-ctr {
+          width: auto;
+        }
+
+        .section-first .col-xl-7 img {
+          width: 90%;
+          object-fit: cover;
+        }
+        .quiz-main {
+          margin-left: 300px;
+        }
+      }
+      .services {
+        min-height: auto;
+        padding-bottom: 10rem;
+      }
+
+      .services h2 {
+        margin-bottom: 5rem;
+      }
+
+      .services .services-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .services-container .services-box {
+        flex: 1 1 30rem;
+        background: var(--bg-color);
+        padding: 3rem 2rem 4rem;
+        border-radius: 2rem;
+        box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
+        text-align: center;
+        border-top: 0.6rem solid var(--main-color);
+        border-bottom: 0.6rem solid var(--main-color);
+        transition: 0.5s ease;
+      }
+
+      .services-container .services-box:hover {
+        box-shadow: 0 0.1rem 2rem var(--shadow-color);
+        transform: scale(1.02);
+      }
+
+      .services-box i {
+        font-size: 7rem;
+        color: var(--main-color);
+      }
+
+      .services-box h3 {
+        font-size: 2.6rem;
+        transition: 0.5s ease;
+      }
+
+      .services-box:hover h3 {
+        color: var(--main-color);
+      }
+
+      .services-box p {
+        font-size: 1.6rem;
+        margin: 1rem 0 3rem;
+      }
+    </style>
+    <style>
+      /* Styling for department section */
+      .department {
+        text-align: center; /* Center align the content */
+        margin: 20px 0;
+        margin-top: 100px;
+      }
+
+      /* Styling for heading */
+      .heading {
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      /* Styling for span inside heading */
+      .heading span {
+        color: #007bff; /* Blue color */
+      }
+
+      /* Styling for services container */
+      .services-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Styling for services box */
+      .services-box {
+        background-color: #f8f9fa; /* Light gray background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        max-width: 600px; /* Limit width for better readability */
+      }
+
+      /* Styling for image */
+      .services-box img {
+        max-width: 200px;
+        height: 200px;
+        border-radius: 5px;
+        margin-bottom: 15px; /* Add margin between images and content */
+      }
+
+      /* Styling for h3 */
+      .services-box h3 {
+        font-size: 20px;
+        margin-top: 10px;
+      }
+
+      /* Styling for paragraph */
+      .services-box p {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      /* Styling for button */
+      .btn {
+        display: inline-block;
+        background-color: #5995fd; /* Blue color */
+        color: #fff; /* White color */
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      /* Hover effect for button */
+      .btn:hover {
+        background-color: #268cf9;
+        color: #fff; /* Darker blue color */
+      }
+      .hod {
+        justify-content: center;
+        display: flex;
+        gap: 50px;
+      }
+      .hod img {
+        width: auto;
+        height: 200px;
+        border-radius: 10px;
+        border: 3px #5995fd solid;
+      }
+      .hod-pic img {
+        width: 170px;
+      }
+      .hdetails {
+        line-height: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav
+      class="d-flex justify-content-between flex-row w-100"
+      style="margin-bottom: 100px"
+    >
+      <div class="nav-logo d-flex justify-content-center align-items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path
+            d="M3.5 3.75a.25.25 0 0 1 .25-.25h13.5a.25.25 0 0 1 .25.25v10a.75.75 0 0 0 1.5 0v-10A1.75 1.75 0 0 0 17.25 2H3.75A1.75 1.75 0 0 0 2 3.75v16.5c0 .966.784 1.75 1.75 1.75h7a.75.75 0 0 0 0-1.5h-7a.25.25 0 0 1-.25-.25V3.75Z"
+          ></path>
+          <path
+            d="M6.25 7a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Zm-.75 4.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75Zm16.28 4.53a.75.75 0 1 0-1.06-1.06l-4.97 4.97-1.97-1.97a.75.75 0 1 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5.5-5.5Z"
+          ></path>
+        </svg>
+        <span class="mx-3">Quizz </span>
+      </div>
+
+      <div class="nav-items d-flex justify-content-center align-items-center">
+        <ul class="d-flex flex-row align-items-center justify-content-center">
+          <li>
+            <a
+              type="button"
+              class="button-google clr-blue"
+              href="#"
+              id="admin-login"
+              >Admin Login</a
+            >
+          </li>
+          <li>
+            <a
+              type="button"
+              class="button-google bg-blue text-light d-none d-lg-inline"
+              href="#"
+              id="student-login"
+              >Student Login</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="section row m-0 section-first" style="padding-top: 10rem">
+      <div
+        class="col-12 col-xl-5 d-flex flex-column justify-content-center align-items-center align-items-xl-baseline"
+      >
+        <div class="thirded">
+          <div class="pr-thirded">
+            <h1 class="mb-5">Create quiz for interactive learning</h1>
+            <p class="">
+              Engage visitors with interactive quizzes on our website, where
+              players test their knowledge by answering questions correctly in a
+              fun and engaging way!
+            </p>
+          </div>
+
+          <ul class="d-flex flex-row">
+            <li>
+              <a
+                type="button"
+                id="admin-login1"
+                class="button-google bg-blue text-light d-inline-block"
+                href="#"
+                >Admin Login</a
+              >
+            </li>
+            <li>
+              <a
+                type="button"
+                class="button-google border-0 d-inline-block"
+                href="login page/index.html"
+                id="student-login1"
+                >Student Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="col-12 col-xl-7 d-flex justify-content-center justify-content-xl-end p-0 quiz-main"
+      >
+        <img
+          src="../static/resources/images/login-signup-images/quizz.webp"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div
+      class="section row mt-5 ss-t section-second d-flex justify-content-center align-items-center mx-0 flex-column"
+    >
+      <div
+        class="ss-ctr d-flex flex-column justify-content-center align-items-center align-items-xl-baseline"
+      >
+        <div class="row m-0">
+          <div class="col-12 col-xl-6 d-none d-xl-inline-block">
+            <div class="liImages">
+              <ul>
+                <li class="active">
+                  <img
+                    src="../static/resources/images/images/quizzz.png"
+                    alt=""
+                  />
+                </li>
+                <li class="">
+                  <img
+                    src="../static/resources/images/images/questionsss.png"
+                    alt=""
+                  />
+                </li>
+                <li class="">
+                  <img
+                    src="../static/resources/images/images/scoreee.png"
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 pleft">
+            <h2 class="section-second-hbig col-12" style="line-height: normal">
+              Engage effortlessly for interactive quizzes!
+            </h2>
+            <ul class="ss3-t-ul">
+              <li
+                class="d-flex section-second-li flex-column"
+                onclick="progreset2(1)"
+                id="liHeader1-t"
+              >
+                <div class="d-flex flex-row">
+                  <div class="progressArea">
+                    <div class="progress" id="progress1-t">
+                      <span id="progresInner1-t" class="progresInner"></span>
+                    </div>
+                  </div>
+                  <div class="contentArea">
+                    <p class="liHeader m-0 active-li">Craft your Quiz</p>
+                    <p class="liText">
+                      An engaging quiz platform that offers a diverse range of
+                      multiple-choice questions on various topics, allowing
+                      students to create and participate in quizzes.
+                    </p>
+                  </div>
+                </div>
+
+                <img
+                  src="../static/resources/images/images/ts1.webp"
+                  alt=""
+                  class="w-100 d-xl-none mobil-image"
+                />
+              </li>
+              <li
+                class="d-flex section-second-li flex-column"
+                onclick="progreset2(2)"
+                id="liHeader2-t"
+              >
+                <div class="d-flex flex-row">
+                  <div class="progressArea">
+                    <div class="progress" id="progress">
+                      <span id="progresInner2-t" class="progresInner"></span>
+                    </div>
+                  </div>
+                  <div class="contentArea">
+                    <p class="liHeader m-0">Test your knowledge</p>
+                    <p class="liText">
+                      Engage in diverse MCQ quizzes, challenge yourself, and
+                      expand your knowledge. Join our interactive platform for
+                      an immersive learning experience
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="../static/resources/images/images/questionsss.png"
+                    alt=""
+                    class="w-100 d-xl-none mobil-image"
+                  />
+                </div>
+              </li>
+              <li
+                class="d-flex section-second-li flex-column"
+                onclick="progreset2(3)"
+                id="liHeader3-t"
+              >
+                <div class="d-flex flex-row">
+                  <div class="progressArea">
+                    <div class="progress" id="progress">
+                      <span id="progresInner3-t" class="progresInner"></span>
+                    </div>
+                  </div>
+                  <div class="contentArea">
+                    <p class="liHeader m-0">Leaderboard</p>
+                    <p class="liText">
+                      View top scores, celebrate achievements, and track
+                      progress with our dynamic leaderboard highlighting
+                      performance in MCQ quizzes
+                    </p>
+                  </div>
+                </div>
+                <img
+                  src="../static/resources/images/images/scoreee.png"
+                  alt=""
+                  class="w-100 d-xl-none mobil-image"
+                />
+              </li>
+            </ul>
+          </div>
+
+          <section class="department" id="department">
+            <center>
+              <h2 class="heading">department of <span>AI and ML</span></h2>
+            </center>
+
+            <div class="services-container">
+              <div class="services-box">
+                <center>
+                  <div class="hod">
+                    <div class="hod-pic">
+                      <img
+                        class="hod-picc"
+                        src="static\resources\images\images\hodckr.jpg"
+                        alt=""
+                      />
+                      <span class="hdetails">
+                        <h4><b>Dr.Chetan K R</b></h4>
+                        <p>Mentor of the project</p>
+                        <p>Professor and Head</p>
+                        <p>Dept.of AIML</p>
+                      </span>
+                    </div>
+                    <div class="hod-logo">
+                      <img
+                        src="static\resources\images\images\deptlogo.jpg"
+                        alt=""
+                      />
+                      <span class="hdetails">
+                        <h4><b>Fancon</b></h4>
+                        <p>Dept Logo</p>
+                        <p>AIML</p>
+                        <p>JNNCE</p>
+                      </span>
+                    </div>
+                  </div>
+                </center>
+                <h3>ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING</h3>
+                <p>
+                  AI and ML is one of the most disruptive technologies impacting
+                  the future of every industry and mankind. AI driven technology
+                  has been instrumental in reinventing human lifestyle and
+                  demand for engineers trained in these technologies is rapidly
+                  growing.
+                </p>
+                <p>To know more about JNNCE, AI&ML click below button</p>
+                <a
+                  href="https://jnnce.ac.in/jnndemo/depaiml.html"
+                  target="_blank"
+                  class="btn"
+                  >AI&ML</a
+                >
+              </div>
+            </div>
+          </section>
+
+          <div
+            class="section row mt-5 ss section-second d-flex justify-content-center align-items-center mx-0 flex-column"
+          >
+            <div
+              class="ss-ctr d-flex p-0 flex-column justify-content-center align-items-center align-items-xl-baseline"
+            >
+              <h2 class="section-second-hbig col-12 pleft">Our Team !!!</h2>
+
+              <div class="row m-0">
+                <div class="col-12 col-xl-6 pleft">
+                  <ul class="ss3-ul">
+                    <li
+                      class="d-flex section-second-li flex-column"
+                      onclick="progreset(1)"
+                      id="liHeader1"
+                    >
+                      <div class="d-flex flex-row">
+                        <div class="progressArea">
+                          <div class="progress" id="progress1">
+                            <span
+                              id="progresInner1"
+                              class="progresInner"
+                            ></span>
+                          </div>
+                        </div>
+                        <div class="contentArea">
+                          <p class="liHeader m-0 active-li">
+                            Srujan Y S | 4JN21AI050
+                          </p>
+                          <div class="liText">
+                            <div class="linkedin">
+                              <img
+                                src="../static/resources/images/login-signup-images/linkedin.svg"
+                                alt=""
+                              /><a
+                                href="https://www.linkedin.com/in/srujan-y-s-60442a238?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                target="_blank"
+                                >linkedIn</a
+                              >
+                            </div>
+                            <div class="linkedin">
+                              <img
+                                src="../static/resources/images/login-signup-images/github.svg"
+                                alt=""
+                              /><a
+                                href="https://github.com/Srujanys88"
+                                target="_blank"
+                                >GitHub</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <img
+                        src="../static/resources/images/images/srujan.jpeg"
+                        alt=""
+                        class="w-100 mobil-image d-xl-none"
+                      />
+                    </li>
+                    <li
+                      class="d-flex section-second-li flex-column"
+                      onclick="progreset(2)"
+                      id="liHeader2"
+                    >
+                      <div class="d-flex flex-row">
+                        <div class="progressArea">
+                          <div class="progress" id="progress">
+                            <span
+                              id="progresInner2"
+                              class="progresInner"
+                            ></span>
+                          </div>
+                        </div>
+                        <div class="contentArea">
+                          <p class="liHeader m-0">Veerendra K | 4JN21AI059</p>
+                          <div class="liText">
+                            <div class="linkedin">
+                              <img
+                                src="../static/resources/images/login-signup-images/linkedin.svg"
+                                alt=""
+                              /><a
+                                href="https://www.linkedin.com/in/veerendra-k-belmar/"
+                                target="_blank"
+                                >linkedIn</a
+                              >
+                            </div>
+                            <div class="linkedin">
+                              <img
+                                src="../static/resources/images/login-signup-images/github.svg"
+                                alt=""
+                              /><a
+                                href="https://github.com/Veerendrakb15"
+                                target="_blank"
+                                >GitHub</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <img
+                        src="../static/resources/images/images/veerendra.jpg"
+                        alt=""
+                        class="w-100 mobil-image d-xl-none"
+                      />
+                    </li>
+                    <li
+                      class="d-flex section-second-li flex-column"
+                      onclick="progreset(3)"
+                      id="liHeader3"
+                    >
+                      <div class="d-flex flex-row">
+                        <div class="progressArea">
+                          <div class="progress" id="progress">
+                            <span
+                              id="progresInner3"
+                              class="progresInner"
+                            ></span>
+                          </div>
+                        </div>
+                        <div class="contentArea">
+                          <p class="liHeader m-0">Sanjana M | 4JN21AI042</p>
+                          <div class="liText">
+                            <div class="linkedin">
+                              <img
+                                src="../static/resources/images/login-signup-images/linkedin.svg"
+                                alt=""
+                              /><a
+                                href="https://www.linkedin.com/in/sanjana-m-a3020b262"
+                                target="_blank"
+                                >linkedIn</a
+                              >
+                            </div>
+                            <div class="linkedin">
+                              <img
+                                src="../static/resources/images/login-signup-images/github.svg"
+                                alt=""
+                              /><a
+                                href="https://github.com/sanjanamahesh138"
+                                target="_blank"
+                                >GitHub</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <img
+                        src="../static/resources/images/images/sanjana.jpg"
+                        alt=""
+                        class="w-100 mobil-image d-xl-none"
+                      />
+                    </li>
+                    <li
+                      class="d-flex section-second-li flex-column"
+                      onclick="progreset(4)"
+                      id="liHeader4"
+                    >
+                      <div class="d-flex flex-row">
+                        <div class="progressArea">
+                          <div class="progress" id="progress">
+                            <span
+                              id="progresInner4"
+                              class="progresInner"
+                            ></span>
+                          </div>
+                        </div>
+                        <div class="contentArea">
+                          <p class="liHeader m-0">Chandana V N | 4JN21AI014</p>
+                          <div class="liText">
+                            <div class="linkedin">
+                              <img
+                                src="../static/resources/images/login-signup-images/linkedin.svg"
+                                alt=""
+                              /><a
+                                href="https://www.linkedin.com/in/chandana-v-n-727273262"
+                                target="_blank"
+                                >linkedIn</a
+                              >
+                            </div>
+                            <div class="linkedin">
+                              <img
+                                src="../static/resources/images/login-signup-images/github.svg"
+                                alt=""
+                              /><a
+                                href="https://github.com/chandanavn3"
+                                target="_blank"
+                                >GitHub</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <img
+                        src="../static/resources/images/images/chandana.jpg"
+                        alt=""
+                        class="mobil-image w-100 d-xl-none"
+                      />
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-12 col-xl-6 d-none d-xl-inline-block">
+                  <div class="liImages liImages1">
+                    <ul>
+                      <li class="active">
+                        <img
+                          src="../static/resources/images/images/srujan.jpeg"
+                          alt=""
+                        />
+                      </li>
+                      <li class="">
+                        <img
+                          src="../static/resources/images/images/veerendra.jpg"
+                          alt=""
+                        />
+                      </li>
+                      <li class="">
+                        <img
+                          src="../static/resources/images/images/sanjana.jpg"
+                          alt=""
+                        />
+                      </li>
+                      <li class="">
+                        <img
+                          src="../static/resources/images/images/chandana.jpg"
+                          alt=""
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <center><div>COPYRIGHT © 2024 - ALL RIGHTS RESERVED.</div></center>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../static/resources/CSS/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#admin-login").click(function () {
+          var buttonId = $(this).attr("id");
+          $.ajax({
+            type: "POST",
+            url: "/admin-login",
+            data: { id: buttonId },
+            success: function (response) {
+              window.location.href = "/admin-login";
+            },
+            error: function (error) {
+              console.log(error);
+            },
+          });
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#admin-login1").click(function () {
+          var buttonId = $(this).attr("id");
+          $.ajax({
+            type: "POST",
+            url: "/admin-login",
+            data: { id: buttonId },
+            success: function (response) {
+              window.location.href = "/admin-login";
+            },
+            error: function (error) {
+              console.log(error);
+            },
+          });
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#student-login").click(function () {
+          var buttonId = $(this).attr("id");
+          $.ajax({
+            type: "POST",
+            url: "/user-login",
+            data: { id: buttonId },
+            success: function (response) {
+              window.location.href = "/user-login";
+            },
+            error: function (error) {
+              console.log(error);
+            },
+          });
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#student-login1").click(function () {
+          var buttonId = $(this).attr("id");
+          $.ajax({
+            type: "POST",
+            url: "/user-login",
+            data: { id: buttonId },
+            success: function (response) {
+              window.location.href = "/user-login";
+            },
+            error: function (error) {
+              console.log(error);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

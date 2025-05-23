@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Questions</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      form {
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      select {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #5995fd;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #377efa;
+      }
+
+      #qqns {
+        margin-top: 20px;
+      }
+
+      #end-test {
+        padding: 10px 20px;
+        background-color: #5995fd;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #end-test:hover {
+        background-color: #397cf0;
+      }
+      input[type="text"]:hover,
+      select:hover {
+        border: 1px solid black; /* Change border color on hover */
+      }
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        border: 2px solid #000000;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      td {
+        text-align: center;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Enter Quiz ID:</h1>
+    <form action="/qnshowatn" method="POST">
+      <select id="quiz_id"></select>
+      <button type="button" id="shBtn">Show</button>
+      <div id="qqns"></div>
+    </form>
+    <br />
+    <div>
+      <center>
+        <button id="end-test" class="end-test">END TEST</button>
+      </center>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      loadquizids();
+      function loadquizids() {
+        $.ajax({
+          url: "http://127.0.0.1:5000/getquiznames",
+          type: "POST",
+          success: function (data) {
+            //alert(data);
+            $("#quiz_id").html(data);
+          },
+        });
+      }
+
+      $(document).ready(function () {
+        $("#shBtn").click(function (data) {
+          quiz_id = $("#quiz_id").val();
+          $.ajax({
+            url: "/getallquestions",
+            type: "POST",
+            data: { quiz_id: quiz_id },
+            success: function (data) {
+              //alert(data);
+              $("#qqns").html(data);
+            },
+            error: function (xhr, status, error) {
+              alert("An error occurred: " + error);
+            },
+          });
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#end-test").click(function () {
+          var buttonId = $(this).attr("id");
+          $.ajax({
+            type: "POST",
+            url: "/",
+            data: { id: buttonId },
+            success: function (response) {
+              window.location.href = "/";
+            },
+            error: function (error) {
+              console.log(error);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gmail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/19faedb160.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <meta
+      name="google-site-verification"
+      content="Ccnc3F_xnpOgwpRzmF4Y92iEyawMW6xj6z5-LB7RxG8"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --gmail-blue: #1a73e8;
+        --gmail-font: "Open Sans", "Roboto", Arial, sans-serif;
+      }
+
+      html {
+        font-size: 10px;
+      }
+
+      body {
+        font-size: 1.6rem;
+        width: 100%;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /*NAVBAR*/
+
+      nav {
+        position: fixed;
+        top: 0;
+        z-index: 9999;
+        background-color: #fff;
+        padding: 1.6rem 2rem;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      }
+
+      .nav-logo img {
+        width: 30px;
+      }
+
+      .nav-logo span {
+        font-family: sans-serif;
+        font-size: 22px;
+        color: #5f6368;
+        font-weight: 300;
+      }
+
+      .nav-items ul li {
+        margin-left: 0rem;
+      }
+
+      .nav-items ul li a,
+      .sfv-button {
+        border: 0.5px solid rgba(0, 0, 0, 0.07);
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.1px;
+        line-height: 24px;
+        transition: 0.3s all;
+      }
+
+      .nav-items ul li:nth-child(1) a:hover,
+      .sc-six-button-ft:hover,
+      .section-first ul li:nth-child(2) a:hover {
+        background-color: rgba(66, 133, 244, 0.05);
+      }
+
+      .nav-items ul li:nth-child(2) a:hover,
+      .sfv-button:hover {
+        background-color: rgba(151, 151, 151, 0.09);
+        border-color: rgba(58, 129, 243, 0.4);
+      }
+
+      .nav-items ul li:nth-child(3) a:hover,
+      .section-first ul li:nth-child(1) a:hover,
+      .sc-six-button-f:hover {
+        background-color: #174ea6;
+      }
+
+      .button-google {
+        padding: 1rem 1rem;
+        border-radius: 5px;
+      }
+
+      .clr-blue {
+        color: var(--gmail-blue);
+      }
+
+      .bg-blue {
+        background-color: var(--gmail-blue);
+      }
+
+      /*FİRST SECTİON*/
+
+      .section {
+        padding: 6rem 0;
+      }
+
+      .section-first .col-xl-7 img {
+        width: 100%;
+      }
+
+      .section-first .col-xl-5 {
+        padding: 2rem;
+        margin-bottom: 5rem;
+      }
+
+      .section-first h1 {
+        font-size: 34px;
+        line-height: 36px;
+        color: #202124;
+        font-family: "Google Sans", "Roboto", Arial, sans-serif;
+        font-weight: 500;
+      }
+
+      .section-first p {
+        color: #5f6368;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 300;
+        margin-bottom: 4rem;
+      }
+
+      .section-first a {
+        transition: 0.3s all;
+        margin-right: 1rem;
+      }
+
+      /*SECTION2*/
+
+      .mobil-image {
+        display: none;
+      }
+
+      #liHeader1 .mobil-image,
+      #liHeader1-t .mobil-image {
+        display: inline-block;
+      }
+
+      .section-second {
+        padding-top: 0;
+      }
+
+      .section-second-hbig {
+        font-size: 28px;
+        line-height: 32px;
+        color: #202124;
+
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .progressArea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #progress1,
+      #progress1-t {
+        background-color: var(--gmail-blue);
+      }
+
+      .progress {
+        width: 5px;
+        margin-right: 40px;
+        height: 100%;
+        position: relative;
+        background-color: #f1f3f4;
+        border-radius: 0;
+      }
+
+      .progresInner {
+        content: "\A";
+        position: absolute;
+        background: var(--gmail-blue);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        transition: 1s all;
+        border-radius: 0;
+      }
+
+      .liHeader {
+        font-size: 18px;
+        line-height: 26px;
+        font-family: sans-serif;
+        color: #5f6368;
+        transition: 0.5s all;
+        margin-bottom: 10px !important;
+      }
+
+      .liText {
+        color: #5f6368;
+        font-family: sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+      }
+
+      .section-second-li {
+        margin-top: 3rem;
+        cursor: pointer;
+      }
+
+      .liImages ul li {
+        display: none;
+      }
+
+      .liImages ul li img {
+        width: 100%;
+      }
+
+      .active {
+        display: inline-flex !important;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .active-li {
+        color: var(--gmail-blue);
+      }
+
+      /* SECTION THİRD*/
+      .pr-thirded {
+        padding-right: 10rem;
+      }
+
+      #section-third,
+      #section-five {
+        background-color: #f8f9fa;
+      }
+
+      .st-ctr {
+        padding: 6rem 1rem;
+      }
+
+      .st-item {
+        max-width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        flex-direction: column;
+        margin: 2rem;
+      }
+
+      .pleft {
+        padding: 0;
+      }
+
+      .st-item svg {
+        width: 30px;
+        margin-bottom: 5px;
+      }
+
+      .st-item-header {
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .st-item-text {
+        font-family: var(--gmail-font);
+        font-size: 14px;
+        font-weight: 300;
+        color: #5f6368;
+      }
+
+      /*SECTION FOUR*/
+
+      .sf-img {
+        margin-bottom: 30px;
+      }
+
+      .sf-header,
+      .sfv-header,
+      .sc-six-header {
+        font-size: 28px;
+        line-height: 32px;
+      }
+
+      .sf-subtitle {
+        margin-top: 16px;
+        font-size: 18px;
+        color: #5f6368;
+        font-weight: 300;
+      }
+
+      .sf-text {
+        margin-top: 30px;
+        color: #5f6368;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 25px;
+        margin-bottom: 30px;
+      }
+
+      .sf-button {
+        border: 0.5px solid rgba(0, 0, 0, 0.07);
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.1px;
+        line-height: 24px;
+        transition: 0.3s all;
+        background-color: #fff;
+        color: var(--gmail-blue);
+      }
+
+      .sf-button:hover {
+        background-color: rgba(66, 133, 244, 0.05);
+      }
+
+      /*SECTION FİVE*/
+
+      .sfv-ctr-inner-first {
+        margin-bottom: 0px;
+      }
+
+      .sfv-ctr {
+        padding: 4rem 1rem;
+      }
+
+      .sfv-header,
+      .sc-six-header {
+        margin-bottom: 20px;
+      }
+
+      .nmh-box {
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        border-radius: 5px;
+        background-color: #fff;
+        width: auto;
+      }
+
+      .sfv-button {
+        display: inline-block;
+      }
+
+      .nmh-title {
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      .nmh-text {
+        font-size: 16px;
+        font-weight: 300;
+        color: #5f6368;
+      }
+
+      .accordion-item-title {
+        cursor: pointer;
+        position: relative;
+        padding-right: 100px;
+      }
+
+      .accordion-item-title h3,
+      .sc-six-text {
+        font-weight: 300;
+        font-size: 19px;
+        line-height: 26px;
+      }
+
+      .accr-arrow {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        color: var(--gmail-blue);
+        font-size: 22px;
+      }
+
+      .accordion-item-ggl {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+        padding: 23px 0;
+        font-size: 18px;
+        line-height: 28px;
+        color: #202124;
+      }
+
+      .accordion-item-inner {
+        display: none;
+        font-size: 14px;
+        font-weight: 300;
+        color: #5f6368;
+        line-height: 24px;
+        padding-top: 25px;
+        padding-bottom: 20px;
+      }
+
+      .accordion-item-ggl:nth-child(1) .accordion-item-inner {
+        display: inline-block;
+      }
+
+      /*SECTİON SİX*/
+
+      .sc-six-header {
+        width: 250px;
+        text-align: center;
+      }
+
+      .sc-six-text {
+        color: #5f6368;
+      }
+
+      .sc-six-button-f {
+        background-color: var(--gmail-blue);
+        color: #fff;
+        transition: 0.3s all;
+      }
+
+      .sc-six-button-f:hover {
+        color: #fff;
+        background-color: #174ea6;
+      }
+
+      .footer-img img {
+        object-fit: contain;
+        object-position: center;
+      }
+      /*FOOTER*/
+      footer {
+        padding: 30px;
+        background-color: #f8f9fa;
+      }
+      .google-logo {
+        margin-right: 0;
+      }
+
+      .footer-ul {
+        margin-top: 20px;
+      }
+
+      .footer-ul li {
+        margin-right: 25px;
+      }
+      .footer-ul li a,
+      .help-btn a {
+        color: #5f6368;
+      }
+
+      .footer-select {
+        width: 60%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #5f6368;
+        font-size: 15px;
+      }
+
+      .footer-scd-col {
+        margin-top: 20px;
+      }
+      @media (min-width: 576px) {
+        .footer-select {
+          width: 300px;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          color: #5f6368;
+          font-size: 15px;
+        }
+
+        .footer-img {
+          height: 250px;
+        }
+        .footer-img img {
+          object-fit: cover;
+        }
+        .button-google {
+          padding: 1.5rem 2.7rem;
+          border-radius: 5px;
+        }
+
+        .nmh-box {
+          width: 100%;
+        }
+
+        .sfv-ctr {
+          padding: 6rem 1rem;
+          width: 500px;
+        }
+
+        .st-item {
+          max-width: 300px;
+          display: flex;
+          justify-content: center;
+          align-items: baseline;
+          flex-direction: column;
+          margin: 2rem;
+        }
+
+        .section-first .col-xl-7 img,
+        .thirded,
+        .ss-ctr,
+        .section-second-hbig,
+        .st-ctr {
+          width: 500px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        footer {
+          padding: 30px 100px;
+          background-color: #f8f9fa;
+        }
+
+        .footer-img {
+          height: 300px;
+        }
+        .footer-img img {
+          object-fit: cover;
+        }
+
+        .sc-six-text {
+          font-size: 28px;
+          line-height: 38px;
+          letter-spacing: 0.0247517px;
+          color: #5f6368;
+          margin-bottom: 25px;
+        }
+        .sc-six-header {
+          width: 300px;
+          text-align: center;
+        }
+
+        .st-item-text {
+          font-family: var(--gmail-font);
+          font-size: 18.5px;
+          font-weight: 300;
+          color: #5f6368;
+        }
+
+        .st-item-header {
+          font-size: 23px;
+          font-weight: 500;
+          margin-bottom: 20px;
+        }
+
+        .st-item svg {
+          width: auto;
+          margin-bottom: 15px;
+        }
+
+        .liText {
+          color: #5f6368;
+          font-family: sans-serif;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 24px;
+        }
+
+        .liHeader {
+          font-size: 22px;
+          line-height: 28px;
+          font-family: sans-serif;
+          color: #5f6368;
+          transition: 0.5s all;
+          margin-bottom: 20px !important;
+        }
+
+        .section-second-hbig {
+          color: #202124;
+          font-size: 40px;
+          width: 100%;
+          margin-bottom: 100px;
+        }
+
+        .section-second {
+          padding-top: 6rem;
+        }
+
+        .section-first .col-xl-7 img {
+          width: 500px;
+        }
+
+        .nav-items ul li {
+          margin-left: 1rem;
+        }
+
+        .nmh-title {
+          font-size: 23px;
+          line-height: 28px;
+        }
+
+        .nmh-text {
+          font-size: 19px;
+          font-weight: 300;
+          color: #5f6368;
+        }
+
+        .accordion-item-inner {
+          display: none;
+          font-size: 16px;
+          font-weight: 300;
+          color: #5f6368;
+          line-height: 24px;
+          padding-top: 25px;
+          padding-bottom: 40px;
+          padding-right: 100px;
+        }
+
+        .sfv-ctr {
+          padding: 6rem 1rem;
+          width: 700px;
+        }
+
+        .st-ctr {
+          padding: 9rem 1rem;
+        }
+
+        .sf-header,
+        .sfv-header,
+        .sc-six-header {
+          font-size: 42px;
+          line-height: 52px;
+        }
+
+        .sf-subtitle {
+          width: 630px;
+          margin-top: 16px;
+          font-size: 28px;
+        }
+
+        .sf-text {
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 25px;
+          width: 600px;
+          margin-bottom: 30px;
+        }
+
+        .sf-button {
+          border: 0.5px solid rgba(0, 0, 0, 0.07);
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 0.1px;
+          line-height: 24px;
+          transition: 0.3s all;
+          background-color: #fff;
+          color: var(--gmail-blue);
+        }
+
+        .st-ctr {
+          width: auto;
+        }
+
+        #sf-ctr {
+          width: 700px;
+        }
+
+        .st-item {
+          max-width: 300px;
+          display: flex;
+          justify-content: center;
+          align-items: baseline;
+          flex-direction: column;
+          margin: 2rem;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .footer-scd-col {
+          margin-top: 0;
+        }
+
+        .footer-ul {
+          margin-top: 0;
+        }
+
+        .footer-select {
+          width: 75%;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          color: #5f6368;
+          font-size: 15px;
+        }
+
+        .sfv-ctr-inner-first {
+          margin-bottom: 100px;
+        }
+
+        .sfv-header {
+          margin-bottom: 60px;
+        }
+
+        .nmh-box {
+          border: 1px solid rgba(0, 0, 0, 0.16);
+          border-radius: 5px;
+          background-color: #fff;
+          width: auto;
+        }
+
+        .sfv-ctr-inner-first {
+          margin-bottom: 0;
+        }
+
+        .google-faq {
+          padding-left: 60px;
+        }
+
+        .sfv-ctr {
+          padding: 8rem 5rem;
+          width: 100%;
+        }
+
+        #sf-ctr {
+          width: 900px;
+        }
+
+        .section-first p {
+          font-size: 18px;
+        }
+
+        .section-first h1 {
+          font-size: 64px;
+          line-height: 70px;
+        }
+
+        nav {
+          padding: 1.6rem 7.5rem;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+            0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .section-first .col-xl-5,
+        .pleft {
+          padding-left: 13rem;
+          padding-right: 3rem;
+        }
+
+        .thirded,
+        .ss-ctr {
+          width: auto;
+        }
+
+        .section-first .col-xl-7 img {
+          width: 90%;
+          object-fit: cover;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="d-flex justify-content-between flex-row w-100">
+      <div class="nav-logo d-flex justify-content-center align-items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path
+            d="M3.5 3.75a.25.25 0 0 1 .25-.25h13.5a.25.25 0 0 1 .25.25v10a.75.75 0 0 0 1.5 0v-10A1.75 1.75 0 0 0 17.25 2H3.75A1.75 1.75 0 0 0 2 3.75v16.5c0 .966.784 1.75 1.75 1.75h7a.75.75 0 0 0 0-1.5h-7a.25.25 0 0 1-.25-.25V3.75Z"
+          ></path>
+          <path
+            d="M6.25 7a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Zm-.75 4.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75Zm16.28 4.53a.75.75 0 1 0-1.06-1.06l-4.97 4.97-1.97-1.97a.75.75 0 1 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5.5-5.5Z"
+          ></path>
+        </svg>
+        <span class="mx-3">Quizz</span>
+      </div>
+      <div class="nav-items d-flex justify-content-center align-items-center">
+        <ul class="d-flex flex-row align-items-center justify-content-center">
+          <li>
+            <a class="button-google border-0 d-none d-md-inline" href="#"
+              >For Work</a
+            >
+          </li>
+          <li>
+            <a class="button-google clr-blue" href="login page/index.html"
+              >Sign in</a
+            >
+          </li>
+          <li>
+            <a
+              class="button-google bg-blue text-light d-none d-lg-inline"
+              href="signup.html"
+              >Create an account</a
+            >
+            <a
+              class="button-google bg-blue text-light d-none d-md-inline d-lg-none"
+              href="www.gmail.com"
+              >Get Mail</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="section row m-0 section-first" style="padding-top: 10rem">
+      <div
+        class="col-12 col-xl-5 d-flex flex-column justify-content-center align-items-center align-items-xl-baseline"
+      >
+        <div class="thirded">
+          <div class="pr-thirded">
+            <h1 class="mb-5">Secure, smart, and easy to use email</h1>
+            <p class="">
+              Get more done with Gmail. Now integrated with Google Chat, Google
+              Meet, and more, all in one place.
+            </p>
+          </div>
+
+          <ul class="d-flex flex-row">
+            <li>
+              <a
+                class="button-google bg-blue text-light d-inline-block"
+                href="signup.html"
+                >Create an account</a
+              >
+            </li>
+            <li>
+              <a
+                class="button-google border-0 d-inline-block"
+                href="login page/index.html"
+                >Sign in</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="col-12 col-xl-7 d-flex justify-content-center justify-content-xl-end p-0"
+      >
+        <img src="section-img.webp" alt="" />
+      </div>
+    </div>
+
+    <div
+      class="section row mt-5 ss section-second d-flex justify-content-center align-items-center mx-0 flex-column"
+    >
+      <div
+        class="ss-ctr d-flex p-0 flex-column justify-content-center align-items-center align-items-xl-baseline"
+      >
+        <h2 class="section-second-hbig col-12 pleft">
+          Email that's secure, private, and puts you in control.
+        </h2>
+
+        <div class="row m-0">
+          <div class="col-12 col-xl-6 pleft">
+            <ul class="ss3-ul">
+              <li
+                class="d-flex section-second-li flex-column"
+                onclick="progreset(1)"
+                id="liHeader1"
+              >
+                <div class="d-flex flex-row">
+                  <div class="progressArea">
+                    <div class="progress" id="progress1">
+                      <span id="progresInner1" class="progresInner"></span>
+                    </div>
+                  </div>
+                  <div class="contentArea">
+                    <p class="liHeader m-0 active-li">
+                      We never use your Gmail content for any ads purposes
+                    </p>
+                    <p class="liText">
+                      Gmail uses industry-leading encryption for all messages
+                      you receive and send. We never use your Gmail content to
+                      personalize ads.
+                    </p>
+                  </div>
+                </div>
+
+                <img
+                  src="images/ss1.webp"
+                  alt=""
+                  class="w-100 mobil-image d-xl-none"
+                />
+              </li>
+              <li
+                class="d-flex section-second-li flex-column"
+                onclick="progreset(2)"
+                id="liHeader2"
+              >
+                <div class="d-flex flex-row">
+                  <div class="progressArea">
+                    <div class="progress" id="progress">
+                      <span id="progresInner2" class="progresInner"></span>
+                    </div>
+                  </div>
+                  <div class="contentArea">
+                    <p class="liHeader m-0">
+                      Gmail keeps over a billion people safe every day
+                    </p>
+                    <p class="liText">
+                      Gmail blocks 99.9% of spam, malware, and dangerous links
+                      from ever reaching your inbox.
+                    </p>
+                  </div>
+                </div>
+                <img
+                  src="images/ss2.webp"
+                  alt=""
+                  class="w-100 mobil-image d-xl-none"
+                />
+              </li>
+              <li
+                class="d-flex section-second-li flex-column"
+                onclick="progreset(3)"
+                id="liHeader3"
+              >
+                <div class="d-flex flex-row">
+                  <div class="progressArea">
+                    <div class="progress" id="progress">
+                      <span id="progresInner3" class="progresInner"></span>
+                    </div>
+                  </div>
+                  <div class="contentArea">
+                    <p class="liHeader m-0">
+                      The most advanced phishing protections available
+                    </p>
+                    <p class="liText">
+                      When a suspicious email arrives that could be legitimate,
+                      Gmail lets you know, keeping you in control.
+                    </p>
+                  </div>
+                </div>
+                <img
+                  src="images/ss3.webp"
+                  alt=""
+                  class="w-100 mobil-image d-xl-none"
+                />
+              </li>
+              <li
+                class="d-flex section-second-li flex-column"
+                onclick="progreset(4)"
+                id="liHeader4"
+              >
+                <div class="d-flex flex-row">
+                  <div class="progressArea">
+                    <div class="progress" id="progress">
+                      <span id="progresInner4" class="progresInner"></span>
+                    </div>
+                  </div>
+                  <div class="contentArea">
+                    <p class="liHeader m-0">
+                      Best-in-class controls over emails you send
+                    </p>
+                    <p class="liText">
+                      Confidential Mode lets you set expirations and require
+                      recipients to verify by text. You can also remove options
+                      to forward, copy, download, and print.
+                    </p>
+                  </div>
+                </div>
+                <img
+                  src="images/ss4.webp"
+                  alt=""
+                  class="mobil-image w-100 d-xl-none"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-xl-6 d-none d-xl-inline-block">
+            <div class="liImages">
+              <ul>
+                <li class="active">
+                  <img src="images/ss1.webp" alt="" />
+                </li>
+                <li class="">
+                  <img src="images/ss2.webp" alt="" />
+                </li>
+                <li class="">
+                  <img src="images/ss3.webp" alt="" />
+                </li>
+                <li class="">
+                  <img src="images/ss4.webp" alt="" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="section row mt-5 ss-t section-second d-flex justify-content-center align-items-center mx-0 flex-column"
+    >
+      <div
+        class="ss-ctr d-flex flex-column justify-content-center align-items-center align-items-xl-baseline"
+      >
+        <div class="row m-0">
+          <div class="col-12 col-xl-6 d-none d-xl-inline-block">
+            <div class="liImages">
+              <ul>
+                <li class="active">
+                  <img src="images/ts1.webp" alt="" />
+                </li>
+                <li class="">
+                  <img src="images/ts2.webp" alt="" />
+                </li>
+                <li class="">
+                  <img src="images/ts3.webp" alt="" />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 pleft">
+            <h2 class="section-second-hbig col-12">Get more done with Gmail</h2>
+            <ul class="ss3-t-ul">
+              <li
+                class="d-flex section-second-li flex-column"
+                onclick="progreset2(1)"
+                id="liHeader1-t"
+              >
+                <div class="d-flex flex-row">
+                  <div class="progressArea">
+                    <div class="progress" id="progress1-t">
+                      <span id="progresInner1-t" class="progresInner"></span>
+                    </div>
+                  </div>
+                  <div class="contentArea">
+                    <p class="liHeader m-0 active-li">
+                      Stay connected and get organized
+                    </p>
+                    <p class="liText">
+                      Start a Chat, jump into a video call with Meet, or
+                      collaborate in a Doc, all right from Gmail.
+                    </p>
+                  </div>
+                </div>
+
+                <img
+                  src="images/ts1.webp"
+                  alt=""
+                  class="w-100 d-xl-none mobil-image"
+                />
+              </li>
+              <li
+                class="d-flex section-second-li flex-column"
+                onclick="progreset2(2)"
+                id="liHeader2-t"
+              >
+                <div class="d-flex flex-row">
+                  <div class="progressArea">
+                    <div class="progress" id="progress">
+                      <span id="progresInner2-t" class="progresInner"></span>
+                    </div>
+                  </div>
+                  <div class="contentArea">
+                    <p class="liHeader m-0">Get more done faster</p>
+                    <p class="liText">
+                      Write emails and messages faster with features like Smart
+                      Compose to spend more time doing what you love.
+                    </p>
+                  </div>
+                </div>
+                <img
+                  src="images/ts2.webp"
+                  alt=""
+                  class="w-100 d-xl-none mobil-image"
+                />
+              </li>
+              <li
+                class="d-flex section-second-li flex-column"
+                onclick="progreset2(3)"
+                id="liHeader3-t"
+              >
+                <div class="d-flex flex-row">
+                  <div class="progressArea">
+                    <div class="progress" id="progress">
+                      <span id="progresInner3-t" class="progresInner"></span>
+                    </div>
+                  </div>
+                  <div class="contentArea">
+                    <p class="liHeader m-0">Never forget the reply</p>
+                    <p class="liText">
+                      Gentle nudges help you stay on top of everything.
+                    </p>
+                  </div>
+                </div>
+                <img
+                  src="images/ts3.webp"
+                  alt=""
+                  class="w-100 d-xl-none mobil-image"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="section-third"
+      class="d-flex justify-content-center align-items-baseline align-items-md-center flex-column"
+    >
+      <div
+        class="st-ctr d-flex justify-content-center align-items-baseline align-items-lg-center align-items-xl-baseline flex-column flex-xl-row"
+      >
+        <div class="st-item">
+          <svg
+            width="46"
+            height="46"
+            viewBox="0 0 46 46"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="23" cy="23" r="23" fill="#1A73E8"></circle>
+            <path
+              d="M19.9334 27.2936L15.6401 23.0002L14.209 24.4313L19.9334 30.1558L32.2001 17.8891L30.769 16.458L19.9334 27.2936Z"
+              fill="white"
+            ></path>
+          </svg>
+          <h4 class="st-item-header">Works with other tools</h4>
+          <span class="st-item-text"
+            >Gmail works great with desktop clients like Microsoft Outlook,
+            Apple Mail and Mozilla Thunderbird, including contact and event
+            sync.
+          </span>
+        </div>
+        <div class="st-item">
+          <svg
+            width="46"
+            height="46"
+            viewBox="0 0 46 46"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="23" cy="23" r="23" fill="#1A73E8"></circle>
+            <path
+              d="M32.2003 21.9782L34.2447 19.9337C30.4319 16.1208 25.1776 14.6693 20.2403 15.5279L22.8776 18.1653C26.251 18.1448 29.6345 19.4124 32.2003 21.9782ZM19.9336 28.1115L23.0003 31.1782L26.067 28.1115C24.3803 26.4146 21.6305 26.4146 19.9336 28.1115ZM30.1559 24.0226C29.0519 22.9186 27.7434 22.1315 26.3532 21.6408L29.4403 24.7279L30.1559 24.0226ZM14.2194 12.4102L12.7781 13.8515L15.8959 16.9693C14.4034 17.7155 13.003 18.6968 11.7559 19.9337L13.8003 21.9782C15.0576 20.7208 16.5092 19.7702 18.063 19.1364L20.3527 21.4262C18.6967 21.8657 17.143 22.7346 15.8447 24.0226L17.8892 26.067C19.2692 24.687 21.0683 23.9817 22.8879 23.9613L30.1252 31.1986L31.5665 29.7573L14.2194 12.4102Z"
+              fill="white"
+            ></path>
+          </svg>
+          <h4 class="st-item-header">Stay productive, even offline</h4>
+          <span class="st-item-text"
+            >Gmail offline lets you read, reply, delete, and search your Gmail
+            messages when you’re not connected to the internet.
+          </span>
+        </div>
+        <div class="st-item">
+          <svg
+            width="46"
+            height="46"
+            viewBox="0 0 46 46"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="23" cy="23" r="23" fill="#1A73E8"></circle>
+            <path
+              d="M34.1452 19.7549H27.4135C26.8525 19.7549 26.2915 20.2616 26.2915 20.7683V30.9022C26.2915 31.4089 26.8525 31.9156 27.4135 31.9156H34.1452C34.7062 31.9156 35.2672 31.4089 35.2672 30.9022V20.7683C35.2672 20.2616 34.7062 19.7549 34.1452 19.7549ZM33.0232 29.8888H28.5354V21.7817H33.0232V29.8888Z"
+              fill="white"
+            ></path>
+            <path
+              d="M13.0072 17.4059H33.4718V15.333H13.0072C11.7566 15.333 10.7334 16.2658 10.7334 17.4059V29.8429C10.7334 30.983 11.7566 31.9158 13.0072 31.9158H24.6038V29.8429H13.0072V17.4059Z"
+              fill="white"
+            ></path>
+          </svg>
+          <h4 class="st-item-header">Experience Gmail on any device</h4>
+          <span class="st-item-text"
+            >Enjoy the ease and simplicity of Gmail, wherever you are.
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      id="section-four"
+      class="d-flex justify-content-center align-items-center flex-column"
+    >
+      <div
+        id="sf-ctr"
+        class="st-ctr d-flex justify-content-center align-items-center flex-column text-center"
+      >
+        <div class="sf-img">
+          <svg
+            width="253"
+            height="41"
+            viewBox="0 0 253 41"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0)">
+              <path
+                d="M4.93546 34.0295H10.6934V20.0895L2.46777 13.9395V31.5695C2.46777 32.9225 3.57823 34.0295 4.93546 34.0295Z"
+                fill="#4285F4"
+              ></path>
+              <path
+                d="M30.4351 34.0295H36.193C37.5502 34.0295 38.6607 32.9225 38.6607 31.5695V13.9395L30.4351 20.0895V34.0295Z"
+                fill="#34A853"
+              ></path>
+              <path
+                d="M30.4351 9.42959V20.0896L38.6607 13.9396V10.6596C38.6607 7.62559 35.1648 5.86259 32.7382 7.70759L30.4351 9.42959Z"
+                fill="#FBBC04"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M10.6934 20.0897V9.42969L20.5641 16.8097L30.4348 9.42969V20.0897L20.5641 27.4697L10.6934 20.0897Z"
+                fill="#EA4335"
+              ></path>
+              <path
+                d="M2.46777 10.6603V13.9403L10.6934 20.0903V9.43028L8.39022 7.70828C5.96366 5.90428 2.46777 7.62628 2.46777 10.6603Z"
+                fill="#C5221F"
+              ></path>
+            </g>
+            <g clip-path="url(#clip1)">
+              <path
+                d="M85.2471 13.1689H69.2944V29.072H85.2471V13.1689Z"
+                fill="white"
+              ></path>
+              <path
+                d="M72.5649 25.494C71.9667 25.0964 71.5679 24.5001 71.3286 23.7447L72.7245 23.1881C72.8441 23.6652 73.0834 24.023 73.3626 24.3013C73.6816 24.5796 74.0406 24.6988 74.4793 24.6988C74.918 24.6988 75.3168 24.5796 75.6358 24.3013C75.9549 24.023 76.1144 23.6652 76.1144 23.2676C76.1144 22.8302 75.9549 22.4724 75.596 22.1941C75.237 21.9158 74.8382 21.7965 74.3197 21.7965H73.5221V20.4448H74.24C74.6787 20.4448 75.0376 20.3255 75.3567 20.087C75.6757 19.8484 75.7954 19.5304 75.7954 19.093C75.7954 18.7352 75.6757 18.4172 75.3966 18.2184C75.1174 17.9798 74.7983 17.9003 74.3596 17.9003C73.9608 17.9003 73.6418 18.0196 73.4025 18.2184C73.1632 18.4172 73.0036 18.6955 72.884 19.0135L71.528 18.4569C71.7274 17.9401 72.0465 17.5027 72.5251 17.1052C73.0036 16.7076 73.6418 16.5088 74.3995 16.5088C74.9579 16.5088 75.4763 16.6281 75.915 16.8268C76.3537 17.0256 76.7127 17.3437 76.9519 17.7413C77.1912 18.1388 77.3508 18.5364 77.3508 19.0135C77.3508 19.4906 77.2311 19.9279 76.9918 20.246C76.7525 20.6038 76.4734 20.8424 76.1144 21.0412V21.1207C76.5531 21.3195 76.9519 21.5978 77.2311 21.9953C77.5103 22.3929 77.6698 22.8302 77.6698 23.3868C77.6698 23.9435 77.5502 24.4205 77.271 24.8181C76.9918 25.2555 76.6329 25.5735 76.1144 25.8121C75.6358 26.0506 75.0775 26.1699 74.4793 26.1699C73.8013 26.0904 73.1632 25.8916 72.5649 25.494Z"
+                fill="#4285F4"
+              ></path>
+              <path
+                d="M81.0589 18.6558L79.5434 19.7691L78.7856 18.6161L81.4976 16.668H82.5345V25.8917H81.0589V18.6558Z"
+                fill="#4285F4"
+              ></path>
+              <path
+                d="M85.2471 29.0723H69.2944V36.2286H85.2471V29.0723Z"
+                fill="#34A853"
+              ></path>
+              <path
+                d="M85.2472 6.0127H64.5086C63.1925 6.0127 62.1157 7.08615 62.1157 8.39815V29.0721H69.2944V13.1691H85.2472V6.0127Z"
+                fill="#4285F4"
+              ></path>
+              <path
+                d="M62.1157 29.0723V33.8432C62.1157 35.1552 63.1925 36.2286 64.5086 36.2286H69.2944V29.0723H62.1157Z"
+                fill="#188038"
+              ></path>
+              <path
+                d="M92.4258 13.1689H85.2471V29.072H92.4258V13.1689Z"
+                fill="#FBBC04"
+              ></path>
+              <path
+                d="M92.4258 13.1691V8.39815C92.4258 7.08615 91.349 6.0127 90.0329 6.0127H85.2471V13.1691H92.4258Z"
+                fill="#1967D2"
+              ></path>
+              <path
+                d="M85.2471 36.2286L92.4258 29.0723H85.2471V36.2286Z"
+                fill="#EA4335"
+              ></path>
+            </g>
+            <g clip-path="url(#clip2)">
+              <path
+                d="M114.857 31.8982L116.42 34.6452C116.749 35.2192 117.242 35.6702 117.777 35.9982L123.453 26.2402H112.143C112.143 26.8962 112.307 27.5112 112.636 28.0852L114.857 31.8982Z"
+                fill="#0066DA"
+              ></path>
+              <path
+                d="M130.074 14.76L124.44 5.00195C123.864 5.32995 123.412 5.78095 123.083 6.35495L112.636 24.395C112.307 24.969 112.143 25.584 112.143 26.24H123.453L130.074 14.76Z"
+                fill="#00AC47"
+              ></path>
+              <path
+                d="M130.074 14.7598L135.75 5.00177C135.174 4.67377 134.557 4.50977 133.899 4.50977H126.29C125.632 4.50977 125.015 4.71477 124.439 5.00177L130.074 14.7598Z"
+                fill="#00832D"
+              ></path>
+              <path
+                d="M136.736 26.2402H123.452L117.817 35.9982C118.393 36.3262 119.01 36.4902 119.668 36.4902H140.52C141.178 36.4902 141.795 36.3262 142.371 35.9982L136.736 26.2402Z"
+                fill="#2684FC"
+              ></path>
+              <path
+                d="M142.371 35.9982C142.947 35.6702 143.399 35.2192 143.728 34.6452L144.387 33.4972L147.553 28.0852C147.882 27.5112 148.047 26.8962 148.047 26.2402H136.778L142.371 35.9982Z"
+                fill="#EA4335"
+              ></path>
+              <path
+                d="M142.331 15.375L137.108 6.35495C136.779 5.78095 136.326 5.32995 135.75 5.00195L130.075 14.76L136.696 26.24H148.007C148.007 25.584 147.842 24.969 147.513 24.395L142.331 15.375Z"
+                fill="#FFBA00"
+              ></path>
+            </g>
+            <g clip-path="url(#clip3)">
+              <path
+                d="M177.972 29.8682H169.198V36.2294C169.198 37.5414 170.275 38.6148 171.591 38.6148H177.972V29.8682Z"
+                fill="#00832D"
+              ></path>
+              <path
+                d="M177.972 3.62793H171.591C170.275 3.62793 169.198 4.70138 169.198 6.01338V12.3746V21.1213V29.8679H177.972V21.1213V12.3746H185.949V3.62793H177.972Z"
+                fill="#FFBA00"
+              ></path>
+              <path
+                d="M194.723 29.8682H185.949V38.6148H192.33C193.646 38.6148 194.723 37.5414 194.723 36.2294V29.8682Z"
+                fill="#0066DA"
+              ></path>
+              <path
+                d="M185.949 29.8682H177.972V38.6148H185.949V29.8682Z"
+                fill="#00AC47"
+              ></path>
+              <path
+                d="M185.949 12.375V21.1217V29.8683H194.723V21.1217V12.375H185.949Z"
+                fill="#2684FC"
+              ></path>
+              <path
+                d="M185.949 3.62793V12.3746H194.723L185.949 3.62793Z"
+                fill="#EA4335"
+              ></path>
+            </g>
+            <g clip-path="url(#clip4)">
+              <path
+                d="M234.698 20.5004L238.194 24.5184L242.924 27.5114L243.746 20.5414L242.924 13.7354L238.112 16.3594L234.698 20.5004Z"
+                fill="#00832D"
+              ></path>
+              <path
+                d="M214.34 26.855V32.8C214.34 34.153 215.45 35.26 216.808 35.26H222.771L224.005 30.75L222.771 26.855L218.658 25.625L214.34 26.855Z"
+                fill="#0066DA"
+              ></path>
+              <path
+                d="M222.771 5.74023L214.34 14.1452L218.658 15.3752L222.771 14.1452L224.005 10.2912L222.771 5.74023Z"
+                fill="#E94235"
+              ></path>
+              <path
+                d="M222.771 14.1455H214.34V26.8555H222.771V14.1455Z"
+                fill="#2684FC"
+              ></path>
+              <path
+                d="M248.312 9.30678L242.924 13.6938V27.5108L248.353 31.9388C249.175 32.5538 250.327 31.9798 250.327 30.9548V10.2498C250.327 9.22478 249.134 8.65078 248.312 9.30678Z"
+                fill="#00AC47"
+              ></path>
+              <path
+                d="M234.698 20.5V26.855H222.771V35.26H240.456C241.813 35.26 242.924 34.153 242.924 32.8V27.511L234.698 20.5Z"
+                fill="#00AC47"
+              ></path>
+              <path
+                d="M240.456 5.74023H233.999H222.771V14.1452H234.698V20.5002L242.924 13.6942V8.20023C242.924 6.84723 241.813 5.74023 240.456 5.74023Z"
+                fill="#FFBA00"
+              ></path>
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect
+                  width="36.1927"
+                  height="27.06"
+                  fill="white"
+                  transform="translate(2.46777 6.96973)"
+                ></rect>
+              </clipPath>
+              <clipPath id="clip1">
+                <rect
+                  width="30.3101"
+                  height="30.2158"
+                  fill="white"
+                  transform="translate(62.1157 6.0127)"
+                ></rect>
+              </clipPath>
+              <clipPath id="clip2">
+                <rect
+                  width="35.9048"
+                  height="31.98"
+                  fill="white"
+                  transform="translate(112.143 4.50977)"
+                ></rect>
+              </clipPath>
+              <clipPath id="clip3">
+                <rect
+                  width="25.5243"
+                  height="34.9867"
+                  fill="white"
+                  transform="translate(169.198 3.62793)"
+                ></rect>
+              </clipPath>
+              <clipPath id="clip4">
+                <rect
+                  width="35.9871"
+                  height="29.52"
+                  fill="white"
+                  transform="translate(214.34 5.74023)"
+                ></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <h4 class="sf-header">Gmail is now part of Google Workspace</h4>
+        <h6 class="sf-subtitle">
+          Collaborate faster, from any device, anytime, all in one place.
+        </h6>
+        <p class="sf-text">
+          Google Workspace is a set of productivity and collaboration tools that
+          helps individuals, teams, and businesses stay on top of everything. It
+          is a flexible, innovative solution that includes all your favorite
+          apps like Gmail, Calendar, Drive, Docs, Meet, and more.
+        </p>
+        <a class="sf-button button-google border-0" href="#">Learn More</a>
+      </div>
+    </div>
+    <div
+      id="section-five"
+      class="d-flex justify-content-center align-items-center"
+    >
+      <div class="sfv-ctr row m-0">
+        <div class="col-12 col-lg-4 sfv-ctr-inner-first">
+          <h3 class="sfv-header">Find the answers you need</h3>
+          <div class="nmh-box p-5 d-none d-lg-block">
+            <p class="nmh-title mb-3">Need more help?</p>
+            <p class="nmh-text mb-5">
+              Browse tips and step-by-step guides made for both new users and
+              power users.
+            </p>
+            <a href="#" class="button-google sfv-button">Help Center</a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div class="google-faq">
+            <div class="accordion-item-ggl">
+              <div class="accordion-item-title">
+                <h3>
+                  How does Gmail keep my email communications secure and
+                  private?
+                </h3>
+                <span class="accr-arrow">
+                  <i class="fas fa-angle-up"></i>
+                </span>
+              </div>
+              <p class="accordion-item-inner displayed-accr">
+                Gmail has always had strong security as a foundation. We work
+                hard to protect you from spam, phishing, and malware, before
+                they reach your inbox. Our AI-enhanced spam-filtering
+                capabilities block nearly 10 million spam emails every minute.
+              </p>
+            </div>
+            <div class="accordion-item-ggl">
+              <div class="accordion-item-title">
+                <h3>Do you use my email for ads?</h3>
+                <span class="accr-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </span>
+              </div>
+              <p class="accordion-item-inner displayed-accr">
+                No. While you may see ads in your free Gmail account, your
+                emails are private. Google does not scan or process Gmail
+                content for advertising purposes.
+              </p>
+            </div>
+            <div class="accordion-item-ggl">
+              <div class="accordion-item-title">
+                <h3>How can I keep my emails even more safe and secure?</h3>
+                <span class="accr-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </span>
+              </div>
+              <p class="accordion-item-inner displayed-accr">
+                While Gmail’s features are secure enough for most users, some
+                accounts may require additional layers of safety. Google's
+                Advanced Protection Program safeguards users with high
+                visibility and sensitive information, who are at risk of
+                targeted online attacks.
+              </p>
+            </div>
+            <div class="accordion-item-ggl">
+              <div class="accordion-item-title">
+                <h3>What if I want to use Gmail for work or my business?</h3>
+                <span class="accr-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </span>
+              </div>
+              <p class="accordion-item-inner displayed-accr">
+                Gmail is part of Google Workspace where you can choose from
+                different plans. In addition to what you love about Gmail, you
+                get a custom email address (@yourcompany.com), unlimited group
+                email addresses, 99.9% guaranteed uptime, twice the storage of
+                personal Gmail, zero ads, 24/7 support, Google Workspace Sync
+                for Microsoft Outlook, and more.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="nmh-box p-5 d-block d-lg-none col-12 mt-5">
+          <p class="nmh-title mb-3">Need more help?</p>
+          <p class="nmh-text mb-5">
+            Browse tips and step-by-step guides made for both new users and
+            power users.
+          </p>
+          <a href="#" class="button-google sfv-button">Help Center</a>
+        </div>
+      </div>
+    </div>
+    <div
+      id="section-six"
+      class="d-flex justify-content-center flex-column align-items-center"
+    >
+      <div
+        class="sfv-ctr d-flex justify-content-center align-items-center flex-column pb-0"
+      >
+        <svg
+          width="36"
+          height="27"
+          viewBox="0 0 36 27"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="mb-4"
+        >
+          <path
+            d="M2.45453 26.9996H8.18176V13.0939L0 6.95898V24.5456C0 25.9014 1.0984 26.9996 2.45453 26.9996Z"
+            fill="#4285F4"
+          ></path>
+          <path
+            d="M27.8182 26.9996H33.5455C34.9016 26.9996 36 25.9014 36 24.5456V6.95898L27.8182 13.0939V26.9996Z"
+            fill="#34A853"
+          ></path>
+          <path
+            d="M27.8182 2.46056V13.0943L36 6.95947V3.68754C36 0.654864 32.5371 -1.07722 30.1091 0.742797L27.8182 2.46056Z"
+            fill="#FBBC04"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.18182 13.0947V2.46094L17.9999 9.82279L27.818 2.46094V13.0947L17.9999 20.4566L8.18182 13.0947Z"
+            fill="#EA4335"
+          ></path>
+          <path
+            d="M0 3.68754V6.95947L8.18176 13.0943V2.46056L5.89087 0.742797C3.46293 -1.07722 0 0.654864 0 3.68754Z"
+            fill="#C5221F"
+          ></path>
+        </svg>
+        <h3 class="sc-six-header">Show the world how it's done.</h3>
+        <p class="sc-six-text">Get started with a more powerful Gmail.</p>
+        <div
+          class="d-flex justify-content-center align-items-center flex-column"
+        >
+          <a href="#" class="button-google sfv-button mb-3 sc-six-button-f px-5"
+            >Get Gmail</a
+          >
+          <a
+            href="#"
+            class="button-google border-none mb-3 sc-six-button-ft px-5"
+            >For Work</a
+          >
+        </div>
+      </div>
+      <div class="footer-img w-100">
+        <img
+          src="images/footer-img.webp"
+          alt=""
+          class="d-none d-sm-inline-block w-100 h-100"
+        />
+        <img
+          src="images/footer-mobile.png"
+          alt=""
+          class="d-inline-block d-sm-none m-0 w-100 h-100"
+        />
+      </div>
+    </div>
+    <footer>
+      <div class="row m-0 p-0">
+        <div
+          class="col-12 col-lg-8 row m-0 p-0 d-flex flex-row justify-content-baseline align-items-center"
+        >
+          <div class="google-logo col-12 col-lg-3 p-0">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 84 28"
+              width="84"
+              height="28"
+            >
+              <path
+                d="M11.06 20.38c-5.42 0-9.98-4.42-9.98-9.84S5.64.7 11.06.7c3 0 5.14 1.18 6.75 2.71l-1.9 1.9c-1.15-1.08-2.71-1.92-4.85-1.92C7.1 3.39 4 6.58 4 10.54c0 3.96 3.1 7.15 7.06 7.15 2.57 0 4.03-1.03 4.97-1.97.77-.77 1.27-1.87 1.46-3.38h-6.43V9.66h9.05c.1.48.14 1.06.14 1.68 0 2.02-.55 4.51-2.33 6.29-1.73 1.79-3.93 2.75-6.86 2.75zm23.18-6.33c0 3.65-2.8 6.34-6.24 6.34s-6.25-2.69-6.25-6.34c0-3.67 2.8-6.34 6.25-6.34s6.24 2.67 6.24 6.34zm-2.73 0c0-2.28-1.63-3.84-3.51-3.84s-3.51 1.56-3.51 3.84c0 2.26 1.63 3.84 3.51 3.84s3.51-1.59 3.51-3.84zm16.73 0c0 3.65-2.8 6.34-6.25 6.34-3.44 0-6.24-2.69-6.24-6.34 0-3.67 2.8-6.34 6.24-6.34 3.45 0 6.25 2.67 6.25 6.34zm-2.73 0c0-2.28-1.63-3.84-3.51-3.84s-3.51 1.56-3.51 3.84c0 2.26 1.63 3.84 3.51 3.84 1.89 0 3.51-1.59 3.51-3.84zM61.9 8.09v11.38c0 4.68-2.76 6.6-6.02 6.6-3.07 0-4.92-2.06-5.62-3.74l2.42-1.01c.43 1.03 1.49 2.26 3.19 2.26 2.09 0 3.38-1.3 3.38-3.72v-.91h-.1c-.62.77-1.82 1.44-3.34 1.44-3.17 0-6.07-2.76-6.07-6.31 0-3.58 2.9-6.36 6.07-6.36 1.51 0 2.71.67 3.34 1.42h.1V8.09h2.65zm-2.45 5.98c0-2.23-1.49-3.86-3.38-3.86-1.92 0-3.53 1.63-3.53 3.86 0 2.21 1.61 3.82 3.53 3.82 1.89 0 3.38-1.61 3.38-3.82zm7.32-12.7V20h-2.78V1.37h2.78zm10.95 14.77l2.16 1.44c-.7 1.03-2.38 2.81-5.28 2.81-3.6 0-6.2-2.78-6.2-6.34 0-3.77 2.62-6.34 5.89-6.34 3.29 0 4.9 2.62 5.42 4.03l.29.72-8.47 3.5c.65 1.27 1.66 1.92 3.07 1.92s2.4-.69 3.12-1.74zm-6.65-2.28l5.67-2.35c-.31-.79-1.25-1.34-2.35-1.34-1.42-.01-3.39 1.24-3.32 3.69z"
+                opacity=".54"
+              />
+            </svg>
+          </div>
+          <div class="footer-ul d-inline-block col-12 col-lg-9 p-0">
+            <ul
+              class="d-flex justify-content-baseline align-items-center flex-row flex-wrap"
+            >
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">About Google</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Policy</a></li>
+              <li><a href="#">Privacy & Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="col-12 col-lg-4 d-flex flex-row justify-content-between align-items-center footer-scd-col p-0"
+        >
+          <div class="help-btn">
+            <a href="#"
+              ><i class="fas fa-question-circle"></i
+              ><span class="m-2">Help</span></a
+            >
+          </div>
+          <select class="footer-select">
+            <option value="tr">Turkey</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var x = window.matchMedia("(max-width: 992px)");
+
+      function progreset(id) {
+        /*MOBİLE IMAGE */
+        $(".ss .mobil-image").each(function (element) {
+          $($(".ss .mobil-image")[element]).css("display", "none");
+        });
+
+        $($(`.ss #liHeader${id}`).find($(".mobil-image"))).fadeIn(300);
+
+        /* RESET OTHER CSS*/
+        $(".ss #progress1").css("background-color", "#f1f3f4");
+        $(".ss .progresInner").css("height", "0%");
+        $(".ss .liHeader").css("color", "#5f6368");
+        $(`.ss .liImages ul li`).removeClass();
+        $(`.ss .liImages ul li`).css("display", "none");
+
+        if (x.matches) {
+          $(`.ss .ss3-ul:nth-child(1) img`).each(function (index) {
+            $($(`.ss .ss3-ul:nth-child(1) img`)[index]).removeClass(
+              "d-inline-block"
+            );
+            $($(`.ss .ss3-ul:nth-child(1) img`)[index]).addClass("d-none");
+          });
+          const curImg = $(`.ss .ss3-ul:nth-child(1) img`)[id - 1];
+          $(curImg).removeClass("d-none");
+          $(curImg).addClass("d-inline-block");
+        } else {
+        }
+
+        /*LOOP FOR PROGRESS BAR */
+        $(`.ss .liImages ul li:nth-child(${id})`).fadeIn(300);
+        $(`.ss #liHeader${id}`).css("color", "var(--gmail-blue)");
+        const progressWho = `progresInner${id}`;
+        document.getElementById(progressWho).style.height = `0%`;
+        for (i = 0; i < 100; i++) {
+          setTimeout(function () {
+            document.getElementById(progressWho).style.height = `${i}%`;
+          }, 10);
+        }
+      }
+
+      function progreset2(id) {
+        /*MOBİLE IMAGE */
+        $(".ss-t .mobil-image").each(function (element) {
+          $($(".ss-t .mobil-image")[element]).css("display", "none");
+        });
+
+        $($(`.ss-t #liHeader${id}-t`).find($(".mobil-image"))).fadeIn(300);
+
+        /* RESET OTHER CSS*/
+        $(".ss-t #progress1-t").css("background-color", "#f1f3f4");
+        $(".ss-t .progresInner").css("height", "0%");
+        $(".ss-t .liHeader").css("color", "#5f6368");
+        $(`.ss-t .liImages ul li`).removeClass();
+        $(`.ss-t .liImages ul li`).css("display", "none");
+
+        if (x.matches) {
+          console.log($(`.ss3-t-ul img`));
+          $(`.ss3-t-ul img`).each(function (index) {
+            $($(`.ss3-t-ul img`)[index]).removeClass("d-inline-block");
+            $($(`.ss3-t-ul img`)[index]).addClass("d-none");
+          });
+          const curImg = $(`.ss3-t-ul img`)[id - 1];
+          $(curImg).removeClass("d-none");
+          $(curImg).addClass("d-inline-block");
+        } else {
+        }
+
+        /*LOOP FOR PROGRESS BAR */
+        $(`.ss-t .liImages ul li:nth-child(${id})`).fadeIn(300);
+        $(`.ss-t #liHeader${id}-t`).css("color", "var(--gmail-blue)");
+        const progressWho = `progresInner${id}-t`;
+        document.getElementById(progressWho).style.height = `0%`;
+        for (i = 0; i < 100; i++) {
+          setTimeout(function () {
+            document.getElementById(progressWho).style.height = `${i}%`;
+          }, 10);
+        }
+      }
+
+      $(".accordion-item-ggl").click(function () {
+        const arrow = $($(this)[0]).find($("i"));
+        const accrInner = $($(this)[0]).find($(".accordion-item-inner"));
+
+        /*RESET*/
+
+        if (arrow.hasClass("fa-angle-down")) {
+          arrow.removeClass("fa-angle-down");
+          arrow.addClass("fa-angle-up");
+        } else {
+          arrow.addClass("fa-angle-down");
+          arrow.removeClass("fa-angle-up");
+        }
+
+        accrInner.fadeToggle(300);
+      });
+    </script>
+  </body>
+</html>

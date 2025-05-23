@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quiz Scores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 2px solid #000000;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        .tb {
+            border-style: solid;
+            text-align: center;
+            padding: 10px;
+        }
+
+        body {
+            margin-left: 250px;
+            font-family: Arial, sans-serif; /* Set the font family for the entire page */
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .addUser {
+            justify-content: center;
+            margin-left: 100px;
+            margin: 20px auto; /* Center the content horizontally */
+            max-width: 1000px; /* Set maximum width for the content */
+            padding: 20px; /* Add padding around the content */
+            background-color: white; /* Set background color for the content */
+            border-radius: 10px; /* Add border radius to create rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Add box shadow for a subtle effect */
+        }
+
+        .tb {
+            width: 100%; /* Set table width to fill its container */
+            border-collapse: collapse;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tb th,
+        .tb td {
+            padding: 10px; /* Add padding to table cells */
+            border: 1px solid #5f5b5b; /* Add border to table cells */
+        }
+
+        .tb th {
+            background-color: #f2f2f2; /* Set background color for table header */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        div {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h1 style="color: #5995fd">Quiz Scores</h1>
+<div class="addUser">
+    <table class="tb">
+        <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Marks Scored</th>
+            <th>Total Marks</th> <!-- New column -->
+        </tr>
+        </thead>
+        <tbody>
+        {% for user_id, user_info in scores.items() %}
+        <tr>
+            <td>{{ user_id }}</td>
+            <td>{{ user_info['username'] }}</td>
+            <td>{{ user_info['score'] }}</td>
+            <td>{{ num_questions }}</td> <!-- Display max_marks -->
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
